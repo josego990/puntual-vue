@@ -20,68 +20,17 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
-  name: 'CountToDemo',
+  name: 'SubirArchivos',
   components: { },
   data() {
     return {
-      file: '',
-      setStartVal: 0,
-      setEndVal: 2017,
-      setDuration: 4000,
-      setDecimals: 0,
-      setSeparator: ',',
-      setSuffix: ' rmb',
-      setPrefix: '¥ '
-    }
-  },
-  computed: {
-    _startVal() {
-      if (this.setStartVal) {
-        return this.setStartVal
-      } else {
-        return 0
-      }
-    },
-    _endVal() {
-      if (this.setEndVal) {
-        return this.setEndVal
-      } else {
-        return 0
-      }
-    },
-    _duration() {
-      if (this.setDuration) {
-        return this.setDuration
-      } else {
-        return 100
-      }
-    },
-    _decimals() {
-      if (this.setDecimals) {
-        if (this.setDecimals < 0 || this.setDecimals > 20) {
-          alert('digits argument must be between 0 and 20')
-          return 0
-        }
-        return this.setDecimals
-      } else {
-        return 0
-      }
-    },
-    _separator() {
-      return this.setSeparator
-    },
-    _suffix() {
-      return this.setSuffix
-    },
-    _prefix() {
-      return this.setPrefix
+      file: ''
     }
   },
   methods: {
@@ -90,7 +39,6 @@ export default {
       this.logo_new_company = this.file.name
     },
     submitFile() {
-      console.log('submit init..')
       const formData = new FormData()
       formData.append('file', this.file)
 
@@ -106,8 +54,9 @@ export default {
             'd_e': '01/01/2024'
           }
         }
-      ).then(function() {
+      ).then(function(res) {
         alert('EL ARCHIVO HA SIDO CARGADO CON EXITO')
+        alert(res.data)
       })
         .catch(function() {
           console.log('FAILURE!!')
