@@ -16,7 +16,7 @@
       </b-row>
       <div class="vx-row">
         <div style="text-align:left" class="vx-col w-full">
-          <vs-button class="example-btn" @click="submitFile()">Subir archivo</vs-button>
+          <vs-button class="example-btn" @click="metodoEjemplo()">Subir archivo</vs-button>
         </div>
       </div>
     </div>
@@ -60,6 +60,9 @@ export default {
           console.log('FAILURE!!')
           console.log(res.data)
         })
+    },
+    metodoEjemplo() {
+      alert('BOTONAZO..')
     }
   }
 }

@@ -111,6 +111,19 @@ export const constantRoutes = [
   },
 
   {
+    path: '/ejemplo_menu',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/ejemplo_menu/ejemplo_de_menu'),
+        name: 'Ventas',
+        meta: { title: 'Ejemplo Menu', icon: 'documentation', affix: true }
+      }
+    ]
+  },
+
+  {
     path: '/documentation',
     component: Layout,
     children: [

@@ -140,7 +140,7 @@ export default {
   },
   methods: {
     logni13() {
-      axios.post('http://localhost:3000/puntual_logni13',
+      axios.post('http://23.23.76.112:3030/puntual_logni13',
         '{ "usr": "josego", "pass": "sobrenumerosidad" }').then((response) => {
         console.log(response.data)
 
