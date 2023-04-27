@@ -124,6 +124,19 @@ export const constantRoutes = [
   },
 
   {
+    path: '/carga_excel',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/cargaexcel/cargaexcel'),
+        name: 'Excel',
+        meta: { title: 'Carga Excel', icon: 'excel', affix: true }
+      }
+    ]
+  },
+
+  {
     path: '/documentation',
     component: Layout,
     children: [
