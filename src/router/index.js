@@ -9,6 +9,7 @@ import Layout from '@/layout'
 /* Router Modules */
 import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
+import invEmpRouter from './modules/employe-invoice'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
 
@@ -38,6 +39,7 @@ import nestedRouter from './modules/nested'
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
+
 export const constantRoutes = [
   {
     path: '/redirect',
@@ -70,6 +72,7 @@ export const constantRoutes = [
     component: () => import('@/views/error-page/401'),
     hidden: true
   },
+  invEmpRouter,
   {
     path: '/',
     component: Layout,
@@ -168,6 +171,7 @@ export const constantRoutes = [
  * asyncRoutes
  * the routes that need to be dynamically loaded based on user roles
  */
+
 export const asyncRoutes = [
   {
     path: '/permission',
@@ -227,6 +231,7 @@ export const asyncRoutes = [
   /** when your routing map is too long, you can split it into small modules **/
   componentsRouter,
   chartsRouter,
+
   nestedRouter,
   tableRouter,
 

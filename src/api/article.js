@@ -1,5 +1,13 @@
 import request from '@/utils/request'
 
+export function fetchPositionsList(query) {
+  return request({
+    url: 'http://localhost:3030/get-positions',
+    method: 'get',
+    params: ''
+  })
+}
+
 export function fetchList(query) {
   return request({
     url: '/vue-element-admin/article/list',
